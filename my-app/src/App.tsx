@@ -1,11 +1,11 @@
 import React from 'react';
+import { Greeting } from './components/greeting/Greeting'
 
 function App() {
   return (
-    <div className="App">
-      <h1>hej</h1>
-
-    </div>
+    <>
+      <Greeting />
+    </>
   );
 }
 
