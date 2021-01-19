@@ -1,15 +1,12 @@
 import React from 'react';
-import { Greeting } from './components/greeting/Greeting'
-import { Navbar } from './components/navbar/Navbar'
-import { Home } from './pages/Home'
+import { Routes } from './routes/Routes'
+import { DesktopNavigation} from './components/navigation/desktopnavigation/DesktopNavigation'
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <Greeting />
-      <Home />
-    </>
+    <Routes>
+      <DesktopNavigation />
+    </Routes>
   );
 }
 
