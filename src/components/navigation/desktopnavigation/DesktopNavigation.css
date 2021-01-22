@@ -1,9 +1,14 @@
 .desktopNavigationWrapper {
     display: grid;
-    grid-template-columns: repeat(20, 1fr);
-    background-color: lightblue;
+    grid-template-columns: repeat(5, 1fr);
+    background-color: darkgreen;
+    padding-top: 20px;
 }
 
 .navigationLogotype {
     width: 90px;
+}
+
+.span {
+    cursor: pointer;
 }
