@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom'
 import RoutingPath from '../routes/RoutingPath'
 
 export const SignInView = () => {
-/*     const [value, setValue] = useState('Christopher') */
+
     const [loginCredentials, setLoginCredentials] = useState<loginCredentials>({ username: '', password: ''})
     const history = useHistory()
 

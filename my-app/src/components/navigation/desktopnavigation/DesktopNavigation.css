@@ -1,9 +1,25 @@
 .desktopNavigationWrapper {
     display: grid;
-    grid-template-columns: repeat(20, 1fr);
-    background-color: lightblue;
+    grid-template-columns: repeat(6, 1fr);
+    background-color: lightskyblue;
+    text-align: center;
+    grid-gap: 5px;
+    color: black;
 }
 
-.navigationLogotype {
-    width: 90px;
+.navigationLogotype1 {
+    height: 50px;
+}
+
+.navigationLogotype2 {
+    width: 50px;
+}
+
+.desktopNavigationWrapper span {
+    cursor: pointer;
+    padding-top: 15px;
+}
+
+.desktopNavigationWrapper span:hover {
+    background-color: lightgreen;
 }
