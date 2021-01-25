@@ -1,0 +1,14 @@
+.mobileNavigationWrapper {
+
+    display: grid;
+    background-color: darkgreen;
+    max-width: 150px;
+    color: whitesmoke;
+
+}
+
+.mobileNavigationWrapper >* {
+    border: solid 1px whitesmoke;
+    padding: 10px;
+    cursor: default;
+}

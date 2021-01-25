@@ -1,0 +1,24 @@
+.button >* {
+    background-color: darkgreen;
+    height: 50px;
+
+}
+.button {
+    padding: 0;
+    border: none;
+    border-style: none;
+    background: none;
+}
+
+.mobileNav {
+    visibility: hidden;
+}
+
+@media only screen and (max-width: 600px) {
+    .desktopNav {
+        visibility: hidden;
+    }
+    .mobileNav {
+        visibility: visible;
+    }
+}

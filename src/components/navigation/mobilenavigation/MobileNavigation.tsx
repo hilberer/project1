@@ -1,8 +1,16 @@
 import './MobileNavigation.css'
+import { useHistory } from 'react-router-dom'
+import RoutingPath from '../../../routes/RoutingPath'
 
-export const Mobilenavigation = () => {
+export const MobileNavigation = () => {
+
+    const history=useHistory()
+
     return (
-        <div>
+        <div className="mobileNavigationWrapper">
+            <span onClick={() => history.push(RoutingPath.home)}>Home</span>
+            <span onClick={() => history.push(RoutingPath.about)}>About</span>
+            <span onClick={() => history.push(RoutingPath.signin)}>Login</span>
 
         </div>
     )

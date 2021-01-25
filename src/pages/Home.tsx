@@ -1,4 +1,5 @@
 import './Home.css'
+import { Navigation } from '../components/navigation/Navigation'
 
 export const Home = () => {
     return (
