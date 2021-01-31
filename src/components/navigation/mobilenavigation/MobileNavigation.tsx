@@ -9,8 +9,8 @@ export const MobileNavigation = () => {
     return (
         <div className="mobileNavigationWrapper">
             <span onClick={() => history.push(RoutingPath.home)}>Home</span>
-            <span onClick={() => history.push(RoutingPath.about)}>About</span>
             <span onClick={() => history.push(RoutingPath.signin)}>Login</span>
+            <span onClick={() => history.push(RoutingPath.newrecipe)}>New Recipe</span>
 
         </div>
     )

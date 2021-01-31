@@ -8,7 +8,7 @@ export const SignInView = () => {
 
     const [loginCredentials, setLoginCredentials] = useState<loginCredentials>({ username: '', password: ''})
     const history = useHistory()
-    const [authUser, setAuthuser] = useContext(UserContext)
+    const [, setAuthuser] = useContext(UserContext)
 
     const signIn = () => {
 

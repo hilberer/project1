@@ -1,3 +1,10 @@
-.Profile {
-    width: 100px;
+.profileImg {
+    width: 50px;
+    border-radius: 50%;
+}
+
+
+
+.profileWrapper:hover .profileDropdown {
+    display: block;
 }

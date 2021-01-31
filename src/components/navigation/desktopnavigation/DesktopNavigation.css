@@ -1,25 +1,26 @@
 .desktopNavigationWrapper {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    background-color: lightskyblue;
+    grid-template-columns: repeat(20, 1fr);
+    background-color: lightgrey;
     text-align: center;
-    grid-gap: 5px;
     color: black;
+    position: absolute;
 }
 
 .navigationLogotype1 {
     height: 50px;
+    padding-left: 20px;
 }
 
 .navigationLogotype2 {
     width: 50px;
+    grid-column: 20/20;
 }
 
-.desktopNavigationWrapper span {
-    cursor: pointer;
-    padding-top: 15px;
+.desktopNavigationTabs {
+    grid-column: 5/15;
+    align-items: center;
 }
-
-.desktopNavigationWrapper span:hover {
-    background-color: lightgreen;
+.profile {
+    grid-column: 18/20;
 }
