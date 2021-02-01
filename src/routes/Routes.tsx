@@ -16,7 +16,7 @@ export const Routes = (props: { children: React.ReactChild}) => {
 
         if (localStorage.getItem('user')) { setAuthUser({ username: localStorage.getItem('user')})}
 
-    }, [])
+    }, [setAuthUser])
 
     return (
         <BrowserRouter>
