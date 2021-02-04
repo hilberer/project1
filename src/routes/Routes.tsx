@@ -6,6 +6,7 @@ import { AddIngredient } from '../pages/navigationtabspages/addingredient/AddIng
 import RoutingPath from './RoutingPath'
 import { UserContext } from '../shared/provider/UserProvider'
 import { useEffect, useContext } from 'react'
+import { loginCredentials } from '../shared/interface/Interface'
 
 
 export const Routes = (props: { children: React.ReactChild}) => {
@@ -14,8 +15,17 @@ export const Routes = (props: { children: React.ReactChild}) => {
 
     useEffect(() => {
 
-        if (localStorage.getItem('user')) { setAuthUser({ username: localStorage.getItem('user')})}
+        if (localStorage.getItem('credentials')){
+             setAuthUser(() => {
+                const storage = localStorage.getItem('credentials')
+                if(storage === null){
+                    return {username: '', password: ''}
+                }
+                const user: loginCredentials = JSON.parse(storage)
+                return user
 
+            })
+        }
     }, [setAuthUser])
 
     return (

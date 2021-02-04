@@ -1,17 +1,19 @@
 import './MobileNavigation.css'
-import { useHistory } from 'react-router-dom'
-import RoutingPath from '../../../routes/RoutingPath'
+import { HamburgerButton } from './hamburgerbutton/HamburgerButton'
+import { SideBar } from './sidebar/SideBar'
+import { useState } from 'react'
+import { BackDrop } from '../../backdrop/BackDrop'
 
 export const MobileNavigation = () => {
 
-    const history=useHistory()
 
+    const [openDrawer, setOpenDrawer] = useState<boolean>(false)
     return (
         <div className="mobileNavigationWrapper">
-            <span onClick={() => history.push(RoutingPath.home)}>Home</span>
-            <span onClick={() => history.push(RoutingPath.signin)}>Login</span>
-            <span onClick={() => history.push(RoutingPath.newrecipe)}>New Recipe</span>
-
+            <HamburgerButton drawerHandler={setOpenDrawer} />
+            <SideBar drawerIsOpen={openDrawer} drawerHandler={setOpenDrawer}/>
+{/*             <BackDrop drawerHandler={setOpenDrawer} />
+            {!openDrawer || <BackDrop drawerHandler={setOpenDrawer} />} */}
         </div>
     )
 }

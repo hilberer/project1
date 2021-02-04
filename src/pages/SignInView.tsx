@@ -12,7 +12,7 @@ export const SignInView = () => {
 
     const signIn = () => {
 
-        localStorage.setItem('user', loginCredentials.username)
+        localStorage.setItem('credentials', JSON.stringify(loginCredentials))
         setAuthuser(loginCredentials)
         history.push(RoutingPath.home)
 

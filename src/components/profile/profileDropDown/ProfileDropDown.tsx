@@ -12,7 +12,7 @@ export const ProfileDropDown = () => {
     const logout = () => {
 
         setAuthUser(false)
-        localStorage.removeItem('user')
+        localStorage.removeItem('credentials')
         history.push(RoutingPath.home)
 
     }

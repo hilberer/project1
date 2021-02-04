@@ -4,7 +4,7 @@
     background-color: lightgrey;
     text-align: center;
     color: black;
-    position: absolute;
+    position: sticky;
 }
 
 .navigationLogotype1 {
@@ -23,4 +23,15 @@
 }
 .profile {
     grid-column: 18/20;
+}
+
+.signInButton {
+    display: inline;
+    cursor: pointer;
+    color: white;
+    font-weight: 1000;
+    font-family: 'Roboto', sans-serif;
+    padding: 7%;
+    transition: 0.2s;
+    align-self: center;
 }

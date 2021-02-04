@@ -1,4 +1,10 @@
 
-export interface pizzaName  {
-    pizza: string,
+export interface Pizza  {
+    name: string,
+/*     ingredients: Array<Ingredient>, */
 }
+
+/* export interface Ingredient {
+    type: string,
+    quantity: number,
+} */
