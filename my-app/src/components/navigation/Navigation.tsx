@@ -1,17 +1,25 @@
-import { useState } from 'react'
+import { MobileNavigation } from './mobilenavigation/MobileNavigation'
+import { DesktopNavigation} from './desktopnavigation/DesktopNavigation'
+import './Navigation.css'
+import { useWindowDimensions } from '../../hooks/useWindowDimensions'
 
 export const Navigation = () => {
 
-    const [showNavigation, setShowNavigation] = useState(false)
-    const onClick = () => setShowNavigation(!showNavigation)
+    const { width } = useWindowDimensions()
+    const displayNavigationDependingOnDevice = () => {
+
+        return (width <= 1000)
+            ? <MobileNavigation/>
+            : <DesktopNavigation/>
+    }
+
 
     return (
-        <div>
-            <button onClick={onClick}>Hej</button>
-            { showNavigation ? <Results/> : null }
+        <div className="wrapper">
+{/*             <span className="desktopNav"><DesktopNavigation/></span>
+            <span className="MobileNavigation"><MobileNavigation/></span> */}
+  {/*           <span className="mobileNav"><ToggleButton className="button" img={Navicon} img2={CloseX}><MobileNavigation/></ToggleButton></span> */}
+            {displayNavigationDependingOnDevice()}
         </div>
     )
 }
-const Results = () => (
-    <div className="results">1234</div>
-)

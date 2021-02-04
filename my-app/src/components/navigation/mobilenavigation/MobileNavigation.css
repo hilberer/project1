@@ -1,0 +1,21 @@
+/* .mobileNavigationWrapper {
+
+    display: grid;
+    background-color: darkgreen;
+    max-width: 150px;
+    color: whitesmoke;
+
+}
+
+.mobileNavigationWrapper >* {
+    border: solid 1px whitesmoke;
+    border-left: none;
+    border-bottom: none;
+    padding: 10px;
+    cursor: default;
+}
+ */
+
+ .mobileNavigationWrapper {
+    position: relative;
+ }

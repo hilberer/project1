@@ -1,0 +1,16 @@
+.toggle-button {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 24px;
+    width: 30px;
+    background: transparent;
+    position: sticky;
+}
+
+.toggle-button_line {
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+}
