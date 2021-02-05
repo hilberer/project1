@@ -1,9 +1,9 @@
 .desktopNavigationWrapper {
     display: grid;
     grid-template-columns: repeat(20, 1fr);
-    background-color: lightgrey;
+    background-color: #E4E8DA;
     text-align: center;
-    color: black;
+    color: #202020;
     position: sticky;
 }
 
@@ -28,7 +28,7 @@
 .signInButton {
     display: inline;
     cursor: pointer;
-    color: white;
+    color: #202020;
     font-weight: 1000;
     font-family: 'Roboto', sans-serif;
     padding: 7%;

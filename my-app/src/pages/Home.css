@@ -8,22 +8,19 @@
     margin:0 auto;
     padding-top: 20px;
     grid-template-areas:
-    '. . one one one one two two two .'
-    '. . one one one one . . . .'
-    '. three three three three three three three three .';
+    '. . AddButton AddButton . . . . . .'
+    '. . . . . . . . . .'
+    '. . . . . . . . . .';
 }
 
 .homeWrapper .one {
     grid-area: one;
-    background-color: blue;
 }
 .homeWrapper .two {
     grid-area: two;
-    background-color: yellow;
 
 }
 .homeWrapper .three {
     grid-area: three;
-    background-color: red;
 
 }

@@ -11,12 +11,18 @@ export const SideBar = (props: {drawerIsOpen: boolean, drawerHandler: Function})
     }
     return (
         <div className={props.drawerIsOpen ? 'side-drawer open': 'side-drawer'}>
-            <button className="sidebarButton" onClick={()=>props.drawerHandler(false)}></button>
+            <button className="sidebarButton" onClick={()=>props.drawerHandler(false)}>
+                <div className="sidebarButtonClose1">
+                    <div className="sidebarButtonClose2"></div>
+                </div>
+
+            </button>
 
             <ul className="sidebarMenu">
-                <li onClick={() => handleRedirect(RoutingPath.home)}>Home</li>
-                <li onClick={() => handleRedirect(RoutingPath.newrecipe)}>New Recipe</li>
-                <li onClick={() => handleRedirect(RoutingPath.addingredient)}>Add Ingredient</li>
+                <li className="sidebarLiTags" onClick={() => handleRedirect(RoutingPath.home)}>Home</li>
+                <li className="sidebarLiTags" onClick={() => handleRedirect(RoutingPath.signin)}>Login</li>
+                <li className="sidebarLiTags" onClick={() => handleRedirect(RoutingPath.newrecipe)}>New Recipe</li>
+                <li className="sidebarLiTags" onClick={() => handleRedirect(RoutingPath.addingredient)}>Add Ingredient</li>
             </ul>
 
 
