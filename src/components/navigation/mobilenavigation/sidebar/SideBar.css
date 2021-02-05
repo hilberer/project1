@@ -1,6 +1,6 @@
  .side-drawer {
     height: 100%;
-    background: darkgreen;
+    background: #E4E8DA;
     box-shadow: 1px 0pc 7pc rgba(0,0,0,0.5);
     top: 0;
     left: 0;
@@ -20,18 +20,43 @@
    display: flex;
    justify-content: space-around;
    flex-direction: column;
+   padding: 0;
    height: 24px;
    width: 30px;
    background: transparent;
+   border: none;
 
+ }
+
+ .sidebarButtonClose1 {
+   height: 25px;
+   width: 2px;
+   margin-left: 12px;
+   background-color: black;
+   transform: rotate(45deg);
+   Z-index: 1;
+ }
+
+ .sidebarButtonClose2 {
+   height: 25px;
+   width: 2px;
+   background-color: black;
+   transform: rotate(90deg);
+   Z-index: 2;
  }
 
  .sidebarMenu {
     display: block;
     text-align: left;
-    color: black;
+    color: #202020;
     cursor: pointer;
-    background-color: darkgreen;
-
+    background-color: #E4E8DA;
+    list-style-type: none;
+    padding: 10px;
  }
 
+ .sidebarLiTags {
+   padding-bottom: 15px;
+   padding-top: 15px;
+   border-top: solid 1px;
+ }
