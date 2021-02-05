@@ -1,16 +1,20 @@
 .toggle-button {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     flex-direction: column;
     height: 24px;
     width: 30px;
     background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    box-sizing: border-box;
     position: sticky;
 }
 
 .toggle-button_line {
-    width: 35px;
-    height: 5px;
-    background-color: black;
-    margin: 6px 0;
+    width: 30px;
+    height: 2px;
+    background: black;
 }

@@ -12,8 +12,7 @@ export const MobileNavigation = () => {
         <div className="mobileNavigationWrapper">
             <HamburgerButton drawerHandler={setOpenDrawer} />
             <SideBar drawerIsOpen={openDrawer} drawerHandler={setOpenDrawer}/>
-{/*             <BackDrop drawerHandler={setOpenDrawer} />
-            {!openDrawer || <BackDrop drawerHandler={setOpenDrawer} />} */}
+            {!openDrawer || <BackDrop drawerHandler={setOpenDrawer} />}
         </div>
     )
 }

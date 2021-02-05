@@ -5,7 +5,7 @@ import { pizzaContext } from '../../../shared/provider/PizzaNameProvider'
 
 export const NewRecipe = () => {
 
-    const [createPizza, setCreatePizza] = useState<Pizza>({ name: ''})
+    const [createPizza, setCreatePizza] = useState<Pizza>({ name: '', ingredients:[]})
     const [, setTest] = useContext(pizzaContext)
 
 

@@ -1,6 +1,6 @@
  .side-drawer {
     height: 100%;
-    background: white;
+    background: darkgreen;
     box-shadow: 1px 0pc 7pc rgba(0,0,0,0.5);
     top: 0;
     left: 0;
@@ -9,7 +9,7 @@
     z-index: 100;
     transform: translateX(-100%);
     transition: 0.3s ease-in-out;
-    position: absolute;
+    position: fixed;
 }
 
  .side-drawer.open {
