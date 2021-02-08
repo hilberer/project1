@@ -7,5 +7,5 @@ export interface Pizza  {
 export interface Ingredient {
     name: string,
     type: string,
-    quantity: number,
+    quantity?: number,
 }
