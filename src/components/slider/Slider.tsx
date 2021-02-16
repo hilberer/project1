@@ -7,8 +7,9 @@ export const Slider = (props: { step: number, min: number, max: number, value: n
     const [slider, setSlider] = useState<number>(props.value)
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-        setSlider(parseInt(e.target.value))
-        props.onChangeValue(slider)
+        const newValue = parseInt(e.target.value)
+        setSlider(newValue)
+        props.onChangeValue(newValue)
     }
     return (
         <div className="sliderWrapper">

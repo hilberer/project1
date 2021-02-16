@@ -4,9 +4,11 @@ import './shared/css/Global.css'
 import { UserProvider } from './shared/provider/UserProvider';
 import { Navigation } from './components/navigation/Navigation';
 import { PizzaNameProvider } from './shared/provider/PizzaNameProvider'
+import { StarwarsCharProvider } from './shared/provider/StarwarsCharProvider'
 
 function App() {
   return (
+    <StarwarsCharProvider>
     <PizzaNameProvider>
     <UserProvider>
       <Routes>
@@ -14,6 +16,7 @@ function App() {
       </Routes>
     </UserProvider>
     </PizzaNameProvider>
+    </StarwarsCharProvider>
   );
 }
 

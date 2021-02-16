@@ -3,6 +3,8 @@ import { loginCredentials } from '../shared/interface/Interface'
 import { useHistory } from 'react-router-dom'
 import RoutingPath from '../routes/RoutingPath'
 import { UserContext } from '../shared/provider/UserProvider'
+import './SignInView.css'
+import { BackDrop } from '../components/backdrop/BackDrop'
 
 export const SignInView = () => {
 
@@ -18,11 +20,11 @@ export const SignInView = () => {
 
     }
 
-    return (
-        <div>
+    const [openDrawer, setOpenDrawer] = useState<boolean>(true)
 
-            <h1>{loginCredentials.username}</h1>
-            <form>
+    return (
+        <div className="loginWrapper">
+            <form className="loginForm">
                 <input
                 placeholder='username'
                 onChange={event => setLoginCredentials({ ...loginCredentials, username: event.target.value})}/> <br/>
@@ -30,7 +32,7 @@ export const SignInView = () => {
                 placeholder='password'
                 onChange={event => setLoginCredentials({ ...loginCredentials, password: event.target.value})}
                 />
-                <button onClick={() => signIn()}>Sign in</button>
+                <button className="loginButton" onClick={() => signIn()}>Sign in</button>
             </form>
         </div>
     )
