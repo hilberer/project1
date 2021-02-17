@@ -27,9 +27,10 @@ export const NewRecipe = () => {
             <input
             placeholder="name"
             onChange={ (event) => setCreatePizza({...createPizza, name: event.target.value})} />
-            <button className="button-Create" onClick={() => setPizzas(pizzas.concat(createPizza))}>Create</button>
+            <button className="button-Create" onClick={() => {setPizzas(pizzas.concat(createPizza)); alert('Recipe created')}}>Create</button>
             <button className="button-Save">Save</button>
-            {/* <h1>{ createPizza.name }</h1>*/}
+            <br/>
+            <label>Cheese</label>
             <Slider min={0} max={100} step={10} value={0} onChangeValue={handleChange} defaultLength={100}/>
             <label>Mushroom</label>
             <Slider min={0} max={100} step={10} value={0} onChangeValue={handleChange} defaultLength={100}/>

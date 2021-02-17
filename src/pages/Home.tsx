@@ -1,7 +1,7 @@
 import './Home.css'
 import { AddButton } from '../components/addbutton/AddButton'
 import { Slider } from '../components/slider/Slider'
-import { useState, useContext } from 'react'
+import { useContext } from 'react'
 import { pizzaContext } from '../shared/provider/PizzaNameProvider'
 import { Pizza } from '../shared/interface/Recipe'
 import { StarwarsCharContext } from '../shared/provider/StarwarsCharProvider'
