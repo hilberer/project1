@@ -3,7 +3,7 @@ import { AddButton } from '../components/addbutton/AddButton'
 import { Slider } from '../components/slider/Slider'
 import { useContext } from 'react'
 import { pizzaContext } from '../shared/provider/PizzaNameProvider'
-import { Pizza } from '../shared/interface/Recipe'
+import { Pizza, Ingredient } from '../shared/interface/Recipe'
 import { StarwarsCharContext } from '../shared/provider/StarwarsCharProvider'
 
 
@@ -17,7 +17,13 @@ const handleChange = (value: number) => {
 const displayData = () => {
     return (
         <div>
-            {pizzas.map((x: Pizza) => <div><h1>{x.name}</h1></div>)}
+            {pizzas.map(
+                (pizza: Pizza) => <div><h1>{pizza.name}</h1>
+                    {pizza.ingredients?.map((i: Ingredient) =>
+                        <div>{i.name}{i.quantity}</div>)
+                    }
+                </div>)
+            }
         </div>
     )
 }
