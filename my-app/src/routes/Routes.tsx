@@ -7,12 +7,20 @@ import RoutingPath from './RoutingPath'
 import { UserContext } from '../shared/provider/UserProvider'
 import { useEffect, useContext } from 'react'
 import { loginCredentials } from '../shared/interface/Interface'
+import { SettingsView } from '../pages/authenticatedpages/SettingsView'
 
 
 export const Routes = (props: { children: React.ReactChild}) => {
-    const [, setAuthUser] = useContext(UserContext)
+    const [authUser, setAuthUser] = useContext(UserContext)
     const { children } = props
 
+    const blockRouteIfAuthenticated = (allowedView: React.FC, notAllowedView: React.FC) => {
+        return !authUser ? allowedView : notAllowedView
+    }
+
+    const authenticationRequired = (allowed: React.FC, notAllowed: React.FC) => {
+        return authUser ? allowed : notAllowed
+    }
     useEffect(() => {
 
         if (localStorage.getItem('credentials')){
@@ -33,10 +41,11 @@ export const Routes = (props: { children: React.ReactChild}) => {
         {children}
             <Switch>
                 <Route exact path={RoutingPath.home} component={Home} />
-                <Route exact path={RoutingPath.signin} component={SignInView} />
+                <Route exact path={RoutingPath.signin} component={blockRouteIfAuthenticated(SignInView, Home)} />
                 <Route exact path={RoutingPath.newrecipe} component={NewRecipe} />
                 <Route exact path={RoutingPath.addingredient} component={AddIngredient} />
                 <Route component={Home} />
+                <Route exact path={RoutingPath.settingsView} component={SettingsView} />
             </Switch>
         </BrowserRouter>
     )
