@@ -4,7 +4,6 @@ import { useHistory } from 'react-router-dom'
 import RoutingPath from '../routes/RoutingPath'
 import { UserContext } from '../shared/provider/UserProvider'
 import './SignInView.css'
-import { BackDrop } from '../components/backdrop/BackDrop'
 
 export const SignInView = () => {
 
@@ -20,7 +19,6 @@ export const SignInView = () => {
 
     }
 
-    const [openDrawer, setOpenDrawer] = useState<boolean>(true)
 
     return (
         <div className="loginWrapper">

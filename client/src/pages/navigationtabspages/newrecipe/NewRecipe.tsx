@@ -9,8 +9,10 @@ export const NewRecipe = () => {
 
     const [createPizza, setCreatePizza] = useState<Pizza>({ name: '', ingredients:[]})
     const [pizzas, setPizzas] = useContext(pizzaContext)
-    const [mushroom, setMushroom] = useState<Ingredient>({name:'mushroom', quantity: 0})
-    const [cheese, setCheese] = useState<Ingredient>({name: 'cheese', quantity: 0})
+    const [mushroom, setMushroom] = useState<Ingredient>({name:'mushroom ', quantity: 0})
+    const [cheese, setCheese] = useState<Ingredient>({name: 'cheese ', quantity: 0})
+    const [onion, setOnion] = useState<Ingredient>({name: 'onion ', quantity: 0})
+    const [ham, setHam] = useState<Ingredient>({name: 'Ham ', quantity: 0})
 
 
     const handleChange = (value: number) => {
@@ -23,12 +25,20 @@ export const NewRecipe = () => {
     const handleCheese = (value: number) => {
         setCheese({...cheese, quantity: value})
     }
+    const handleOnion = (value: number) => {
+        setOnion({...onion, quantity: value})
+    }
+    const handleHam = (value: number) => {
+        setHam({...ham, quantity: value})
+    }
 
     const handleClick = () => {
         if (createPizza === undefined || createPizza.ingredients === undefined) {return}
         createPizza.ingredients = new Array<Ingredient>()
         createPizza.ingredients.push(mushroom)
         createPizza.ingredients.push(cheese)
+        createPizza.ingredients.push(onion)
+        createPizza.ingredients.push(ham)
         setPizzas(pizzas.concat(createPizza)); alert('Recipe created')
     }
 
@@ -50,9 +60,9 @@ export const NewRecipe = () => {
             <label>Mushroom</label>
             <Slider min={0} max={100} step={10} value={0} onChangeValue={handleMushroom} defaultLength={100}/>
             <label>Onion</label>
-            <Slider min={0} max={100} step={10} value={0} onChangeValue={handleChange} defaultLength={100}/>
+            <Slider min={0} max={100} step={10} value={0} onChangeValue={handleOnion} defaultLength={100}/>
             <label>Ham</label>
-            <Slider min={0} max={100} step={10} value={0} onChangeValue={handleChange} defaultLength={100}/>
+            <Slider min={0} max={100} step={10} value={0} onChangeValue={handleHam} defaultLength={100}/>
 
         </div>
     )
