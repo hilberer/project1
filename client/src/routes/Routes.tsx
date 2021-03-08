@@ -8,6 +8,7 @@ import { UserContext } from '../shared/provider/UserProvider'
 import { useEffect, useContext } from 'react'
 import { loginCredentials } from '../shared/interface/Interface'
 import { SettingsView } from '../pages/authenticatedpages/SettingsView'
+import { TestApiView } from '../pages/navigationtabspages/testapi/TestApiView'
 
 
 export const Routes = (props: { children: React.ReactChild}) => {
@@ -18,9 +19,9 @@ export const Routes = (props: { children: React.ReactChild}) => {
         return !authUser ? allowedView : notAllowedView
     }
 
-    const authenticationRequired = (allowed: React.FC, notAllowed: React.FC) => {
+/*     const authenticationRequired = (allowed: React.FC, notAllowed: React.FC) => {
         return authUser ? allowed : notAllowed
-    }
+    } */
     useEffect(() => {
 
         if (localStorage.getItem('credentials')){
@@ -44,8 +45,9 @@ export const Routes = (props: { children: React.ReactChild}) => {
                 <Route exact path={RoutingPath.signin} component={blockRouteIfAuthenticated(SignInView, Home)} />
                 <Route exact path={RoutingPath.newrecipe} component={NewRecipe} />
                 <Route exact path={RoutingPath.addingredient} component={AddIngredient} />
-                <Route component={Home} />
+                {/* <Route component={Home} /> */}
                 <Route exact path={RoutingPath.settingsView} component={SettingsView} />
+                <Route exact path = {RoutingPath.testapi} component={TestApiView} />
             </Switch>
         </BrowserRouter>
     )

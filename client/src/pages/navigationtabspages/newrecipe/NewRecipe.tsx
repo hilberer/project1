@@ -14,10 +14,10 @@ export const NewRecipe = () => {
     const [onion, setOnion] = useState<Ingredient>({name: 'onion ', quantity: 0})
     const [ham, setHam] = useState<Ingredient>({name: 'Ham ', quantity: 0})
 
-
+/*
     const handleChange = (value: number) => {
         console.log(value)
-    }
+    } */
 
     const handleMushroom = (value: number) => {
         setMushroom({ ...mushroom, quantity: value })

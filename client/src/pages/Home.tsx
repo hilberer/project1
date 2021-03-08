@@ -7,10 +7,10 @@ import { Pizza, Ingredient } from '../shared/interface/Recipe'
 import { StarwarsCharContext } from '../shared/provider/StarwarsCharProvider'
 
 
-
 export const Home = () => {
-const [pizzas, setPizzas] = useContext<any>(pizzaContext)
-const [char, setChar] = useContext<any>(StarwarsCharContext)
+const [pizzas] = useContext<any>(pizzaContext)
+const [char] = useContext<any>(StarwarsCharContext)
+
 const handleChange = (value: number) => {
     console.log(value)
 }
@@ -28,6 +28,7 @@ const displayData = () => {
     )
 }
 
+
     return (
         <div className="homeWrapper">
             <AddButton />
@@ -37,6 +38,7 @@ const displayData = () => {
             <h1>{char.birth_year}</h1>
             <h1>{char.hair_color}</h1>
             <h1>{char.height}</h1>
+            <br/>
 
         </div>
     )

@@ -31,6 +31,7 @@ export const AddIngredient = () => {
     useEffect(() => {
         getDataFromStarWarsAPI2()
         console.log(char)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [count])
 
 /*     const saveChar = () => {
