@@ -8,3 +8,8 @@ export interface iCreateNewUser {
     password: string,
     age?: number
 }
+
+export interface iCreateNewRecipe {
+    name: string,
+    cheese?: number
+}
