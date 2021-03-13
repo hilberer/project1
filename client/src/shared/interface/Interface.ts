@@ -13,3 +13,9 @@ export interface iCreateNewRecipe {
     name: string,
     cheese?: number
 }
+
+export interface iCreateNewIngredient {
+    name: string,
+    type: string,
+    quantity?: number
+}

@@ -1,5 +1,4 @@
 import './Home.css'
-import { AddButton } from '../components/addbutton/AddButton'
 import { Slider } from '../components/slider/Slider'
 import { useContext } from 'react'
 import { pizzaContext } from '../shared/provider/PizzaNameProvider'
@@ -31,7 +30,6 @@ const displayData = () => {
 
     return (
         <div className="homeWrapper">
-            <AddButton />
             <Slider min={0} max={100} step={10} value={50} onChangeValue={handleChange} defaultLength={100}/>
             {displayData()}
             <h1>{char.name}</h1>

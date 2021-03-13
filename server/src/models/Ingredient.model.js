@@ -9,7 +9,11 @@ const ingredientSchema = Schema ({
     },
     type: {
         type: String,
-        required: true
+        required: false
+    },
+    quantity: {
+        type: Number,
+        required: false
     }
 },{ timestamps: true })
 

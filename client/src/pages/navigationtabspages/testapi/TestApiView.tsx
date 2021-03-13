@@ -24,13 +24,13 @@ export const TestApiView = () => {
                 console.log(error)
             }
         } else {
+            alert('You must have a name for the recipe!')
             console.log('Recipe has no name')
         }
     }
     const fetchRecipes = async () => {
         const response = await BackendAPIRecipe.getAllRecipes()
         setRecipes(response.data)
-
     }
 
     useEffect(() => {
@@ -75,7 +75,7 @@ export const TestApiView = () => {
             <h1> Displaying all users</h1>
             {users.map((y: any) => <div><span>{y.username}</span></div>)}
             <h1> Displaying all recipes</h1>
-            {recipes.map((x: any) => <div><span>{x.name}</span></div>)}
+            {recipes.map((x: any) => <div key={x._id}><span>{x.name}</span></div>)}
 
         </div>
     )

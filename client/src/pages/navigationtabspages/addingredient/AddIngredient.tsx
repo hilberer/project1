@@ -1,53 +1,73 @@
-/* import Axios from 'axios' */
-import { useState, useEffect, useContext } from 'react'
-import StarwarsAPIService from '../../../shared/api/service/StarwarsAPIService'
-import { StarwarsCharContext } from '../../../shared/provider/StarwarsCharProvider'
-
+import { useState, useEffect } from 'react'
+import { iCreateNewIngredient } from '../../../shared/interface/Interface'
+import BackendAPIIngredient from '../../../shared/api/service/BackendAPIIngredient'
+import './AddIngredient.css'
+import { Slider } from '../../../components/slider/Slider'
 
 export const AddIngredient = () => {
-    const [starwarsData, setStarwarsData] = useState<any>()
-    const [count, setCount] = useState(1)
-    const [char, setChar] = useContext(StarwarsCharContext)
+    const [newIngredient, setNewIngredient] = useState<iCreateNewIngredient>({name: '', type: ''})
+    const [loading, ] = useState(false)
+    const [ingredients, setIngredients] = useState<Array<iCreateNewIngredient>>([])
 
-    const makeSureCountWillNeverGoBelowValue1 = () => {
-        (count <= 1) ? setCount(1) : setCount(count - 1)
-    }
+    const ingredient = async () => {
 
-/*     const getDataFromStarWarsAPI = () => {
-        Axios.get(`https://swapi.dev/api/people/${count}/`)
-        .then(response => setStarwarsData(response))
-        .catch(error => console.log(error))
-    } */
-
-    const getDataFromStarWarsAPI2 = async () => {
-        try {
-            const response = await StarwarsAPIService.getStarWarsCharacter(count)
-            setStarwarsData(response)
-        } catch (error) {
-            console.log(error)
+        console.log(newIngredient)
+        if (!doesIngredientNameExist(newIngredient)) {
+            try {
+                const response = BackendAPIIngredient.createIngredient(newIngredient)
+                console.log(response)
+            } catch (error) {
+                console.log(error)
+            }
+        } else {
+            alert('You must have a name for the ingredient!')
+            console.log('Ingredient has no name')
         }
+    }
+    const doesIngredientNameExist = (ingredient: iCreateNewIngredient): boolean => {
+        return ingredient.name === ''
+    }
+    const fetchIngredients = async () => {
+        const response = await BackendAPIIngredient.getAllIngredients()
+        setIngredients(response.data)
     }
 
     useEffect(() => {
-        getDataFromStarWarsAPI2()
-        console.log(char)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [count])
+        fetchIngredients()
+    },[loading])
 
-/*     const saveChar = () => {
-        setChar(starwarsData)
-    } */
-
+    const handleChange = (value: number, name: string) => {
+        let array: Array<iCreateNewIngredient> = [...ingredients]
+        for (let i of array) {
+            if(i.name === name) {
+                i.quantity = value
+                setIngredients(array)
+                console.log(i.name + ' ' + i.type + ' updated with ' + value)
+                return
+            }
+        }
+        console.log('error in for loop')
+    }
     return (
         <div>
-           <h1>Name: {starwarsData?.data?.name}</h1>
-           <h1>Hair Color: {starwarsData?.data?.hair_color}</h1>
-           <h1>Gender: {starwarsData?.data?.gender}</h1>
-           <h1>Birth year: {starwarsData?.data?.birth_year}</h1>
-           <h1>Height: {starwarsData?.data?.height}</h1>
-           <button onClick={() => makeSureCountWillNeverGoBelowValue1()}>Get previous character</button>
-           <button onClick={() => setCount(count + 1)}>Get next character</button>
-           <button onClick={() => setChar(starwarsData.data)}>Save Character</button>
+           <br/>
+           <p>NAME</p>
+           <input placeholder="name" onChange={(event) => setNewIngredient({ ...newIngredient, name: event.target.value})}></input>
+           <p>TYPE</p>
+           <select onChange={event => setNewIngredient({ ...newIngredient, type: event.target.value})}>
+               <option>Cheese</option>
+               <option>Meat</option>
+               <option>Vegetable</option>
+               <option>Sauce</option>
+           </select>
+           <br/>
+           <button onClick={() => ingredient()}>create</button>
+           <button onClick={() => fetchIngredients()}>Show Ingredients</button>
+                {ingredients.map((x: any) =>
+                    <div key={x._id} className={x.type}>
+                        <span>{x.name}</span>
+                        <Slider min={0} max={100} step={10} value={0} onChangeValue={ (value: number) => {handleChange(value, x.name)}} defaultLength={100}/>
+                    </div>)}
         </div>
     )
 }

@@ -7,8 +7,8 @@ const pizzaSchema = Schema ({
         unique: true,
         required: true
     },
-    cheese: {
-        type: Number,
+    ingredients: {
+        type: Array,
         required: false
     }
 },{ timestamps: true })
