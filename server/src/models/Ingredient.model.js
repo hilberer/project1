@@ -9,7 +9,7 @@ const ingredientSchema = Schema ({
     },
     type: {
         type: String,
-        required: false
+        required: true
     },
     quantity: {
         type: Number,

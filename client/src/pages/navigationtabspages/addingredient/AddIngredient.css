@@ -1,12 +1,30 @@
+.IngredientDiv {
+    display: grid;
+    grid-template-columns: 5, 1fr;
+    max-width: 20%;
+    margin: 0 auto;
+    grid-gap: 10px;
+}
+.IngredientInput {
+    width: 200px;
+}
+.IngredientButton {
+    width: 200px;
+}
+
 .Cheese {
     background-color: yellow;
+    grid-column: 1/2;
 }
 .Meat {
     background-color: red;
+    grid-column: 2/3;
 }
 .Vegetable {
     background-color: green;
+    grid-column: 3/4;
 }
 .Sauce {
     background-color: blue;
+    grid-column: 4/5;
 }

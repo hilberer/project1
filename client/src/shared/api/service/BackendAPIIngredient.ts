@@ -17,9 +17,18 @@ const getAllIngredients = async () => {
     }
     return {data: []}
 }
+const deleteIngredient = async (_id: string) => {
+    try {
+        return await http.delete(`/addingredient/${_id}`)
+    } catch(error) {
+        console.log(error)
+    }
+    return {data: []}
+}
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
     createIngredient,
-    getAllIngredients
+    getAllIngredients,
+    deleteIngredient
 }

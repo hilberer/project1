@@ -7,6 +7,7 @@ const pizzaSchema = Schema ({
         unique: true,
         required: true
     },
+
     ingredients: {
         type: Array,
         required: false
